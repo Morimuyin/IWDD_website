@@ -26,3 +26,9 @@ echo <<<_BODY
 <br>
 <a href="logout.php">Logout</a>
 _BODY;
+
+echo <<<_TAIL
+</body>
+</html>
+_TAIL;
+?>

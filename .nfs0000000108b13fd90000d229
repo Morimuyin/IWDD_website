@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# query the NCBI protein database for protein family and taxonomy group
+# return max=10 results
+# code reference: the search command and the parser from XML to JSON is generated with the help of ChatGPT
+
+FAMILY=$1
+TAXONOMY=$2
+
+QUERY="$FAMILY AND $TAXONOMY"
+echo $QUERY
+
+esearch -db protein -query "$QUERY" \
+| efetch -format xml \
+| xtract -pattern GBSeq \
+    -element GBSeq_accession-version \
+             GBSeq_definition \
+             GBSeq_length \
+             GBSeq_sequence \
+| awk -F'\t' '
+BEGIN {
+    count=0
+    print "["
+}
+count < 10 {
+    id=$1
+    name=$2
+    len=$3
+    seq=$4
+
+    gsub(/"/, "\\\"", name)
+    gsub(/\\/, "\\\\", seq)
+    gsub(/\n/, "", seq)
+
+    if (count > 0) print ","
+
+    printf "{\"id\":\"%s\",\"name\":\"%s\",\"length\":%s,\"sequence\":\"%s\"}",
+        id, name, len, seq
+
+    count++
+}
+END {
+    print ""
+    print "]"
+}'
