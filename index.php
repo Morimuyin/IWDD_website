@@ -72,6 +72,8 @@ if(isset($_SESSION['user']) ) {
 echo <<<_WELCOME
 <p>Welcome {$_SESSION['user']}</p>
 <a href="start.php">Start analysis</a>
+<br>
+<a href="logout.php">Logout</a>
 _WELCOME;
 } else {
 echo <<<_FORM
@@ -92,6 +94,6 @@ echo <<<_TAIL
 </body>
 </html>
 _TAIL;
-session_destroy() ;
+
 ?>
 
