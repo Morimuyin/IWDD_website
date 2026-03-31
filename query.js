@@ -49,6 +49,13 @@ async function getquery(event){
         console.log("item:",item);
 	const row = document.createElement("tr");
 	row.innerHTML = `
+            <td>
+            <input type="checkbox"
+               class="row-select"
+               data-id="${item.id}"
+               data-name="${item.name}"
+               data-sequence="${item.sequence}">
+            </td>
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.length}</td>

@@ -2,7 +2,7 @@
 // This page is used to perform search.
 // 1. check the user session
 // 2. search form
-// 3. search result
+// 3. display search result, and update database
 session_start();
 include 'redir_user.php';
 ?>
@@ -21,6 +21,7 @@ _USER;
 
 <!--search form-->
 <h1>Protein search:</h1>
+<p>maximun 20 results</p>
 <form id="searchform">
     Protein family: <input type="text" id="family" value="glucose-6-phosphatase" required><br>
     Taxonomy group: <input type="text" id="taxonomy" value="Aves" required><br>
@@ -45,8 +46,14 @@ _USER;
 </table>
 
 <p id="error_message"></p>
+<button id="btn_select">Get selected sequences:</button>
 
 <!--JS for query-->
 <script src="query.js"></script>
+
+<!--JS for select sequences-->
+<script src="selection.js"></script>
+
+
 </body>
 </html>
