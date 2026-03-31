@@ -156,7 +156,18 @@ if (searchId !==null) {
 }
 function renderResults(data){
 	console.log(data);
+	// load sequences
+	// waiting for development...
 
+    // upload the results if exist
+    if (data.result.motif !== null){
+    const motif = JSON.parse(data.result.motif);	
+    fetch(motif.motif_filename)
+    .then(res => res.text())
+    .then(text => {
+        document.getElementById("motif_result").textContent = text;
+    });
+    }
 }
 </script>
 
