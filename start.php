@@ -20,8 +20,8 @@ echo <<<_BODY
 <p>Please choose a dataset:</p>
 <ul>
     <li><a href="search.php">New Search</a></li>
-    <li><a href="example.php">Example</a></li>
-    <li><a href="history.php">History</a></li>
+    <li><a href="search.php?mode=example">Example</a></li>
+    <li><a href="search.php?mode=history">History</a></li>
 </ul>
 <br>
 <a href="logout.php">Logout</a>
