@@ -1,10 +1,10 @@
-// conservation analysis
-document.getElementById("btn_conservation").addEventListener("click", async () => {
+// motif analysis
+document.getElementById("btn_motif").addEventListener("click", async () => {
 
     const selected = getSelected(); // get selected sequences
 
     //post selected data to get results
-    const response = await fetch("conservation.php", {
+    const response = await fetch("motif.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -17,10 +17,10 @@ document.getElementById("btn_conservation").addEventListener("click", async () =
 
     // show outputs
     //document.getElementById("conservation_alignment").textContent = result.alignment;
-    document.getElementById("conservation_image").src = result.png_filename;
-    fetch(result.aln_filename)
+    //document.getElementById("conservation_image").src = result.png_filename;
+    fetch(result.motif_filename)
     .then(res => res.text())
     .then(text => {
-        document.getElementById("conservation_alignment").textContent = text;
+        document.getElementById("motif_result").textContent = text;
     });
 });

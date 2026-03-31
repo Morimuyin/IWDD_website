@@ -14,6 +14,6 @@ function getSelected() {
     return selectedData;
 }
 
-document.getElementById("btn_select").addEventListener("click", function () {
-    getSelected();
-});
+//document.getElementById("btn_select").addEventListener("click", function () {
+//    getSelected();
+//});

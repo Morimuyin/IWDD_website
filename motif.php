@@ -1,5 +1,5 @@
 <?php
-// this php run conservation analysis, return results in json and update MySQL `results`
+// this php run motif analysis, return results in json and update MySQL `results`
 session_start();
 require_once 'login.php';
 // query and return json
@@ -28,20 +28,15 @@ foreach ($data as $item) {
 file_put_contents("$prefix.fasta", $fasta);
 
 
-// 2. run Clustal Omega, force rewrite
-$aln_filename = "$prefix.aln";
-exec("clustalo -i $prefix.fasta -o $aln_filename --force", $out1, $status1);
+// 2. run patmatmotifs
+$motif_filename = "$prefix.patmatmotifs";
+exec("patmatmotifs -sequence $prefix.fasta -outfile $motif_filename", $out1, $status1);
 
-
-// 3. run plotcon
-exec("plotcon -sequences $aln_filename -graph png -goutfile $prefix -winsize 4", $out2, $status2);
-$png_filename = "$prefix.1.png";
 
 // 4. update database
-$conservation_json = json_encode([
+$motif_json = json_encode([
     "ids" => $ids,
-    "aln_filename" => $aln_filename,
-    "png_filename" => $png_filename
+    "motif_filename" => $motif_filename
 ]);
 try {
     $dsn = "mysql:host=$hostname;dbname=$database;charset=utf8mb4";
@@ -50,12 +45,12 @@ try {
 
      // insert search entry
     $stmt = $conn->prepare("
-    INSERT INTO results (search_id, conservation)
+    INSERT INTO results (search_id, motif)
     VALUES (?, ?)
     ON DUPLICATE KEY UPDATE
-    conservation = VALUES(conservation)
+    motif = VALUES(motif)
     ");
-    $stmt->execute([$search_id, $conservation_json]);
+    $stmt->execute([$search_id, $motif_json]);
 
     $stmt = null;
 } catch(PDOException $e) {
@@ -63,5 +58,5 @@ try {
 }
 
 // return json
-echo $conservation_json;
+echo $motif_json;
 ?>

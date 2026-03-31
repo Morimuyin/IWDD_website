@@ -47,11 +47,15 @@ _USER;
 
 <p id="error_message"></p>
 
-<button id="btn_select">Get selected sequences:</button>
 
-<button id="btn_conservation">Run conservation analysis</button>
+<button id="btn_conservation">Run conservation analysis on selected sequences</button>
 <pre id="conservation_alignment"></pre>
 <img id="conservation_image" />
+
+
+<button id="btn_motif">Run motif analysis on selected sequence</button>
+<pre id="motif_result"></pre>
+
 
 <!--JS for query-->
 <script src="query.js"></script>
@@ -61,6 +65,9 @@ _USER;
 
 <!--JS for conservation analysis-->
 <script src="conservation.js"></script>
+
+<!--JS for motif analysis-->
+<script src="motif.js"></script>
 
 </body>
 </html>
