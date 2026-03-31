@@ -9,11 +9,11 @@ $search_id = $_SESSION['search_id'];
 $data = json_decode(file_get_contents("php://input"), true)['data'];
 
 // directory and prefix for files
-$prefix = "results/$search_id"
+$prefix = "results/$search_id";
 
-if (!file_exists("results")) {
-    mkdir("results");
-}
+//if (!file_exists("results")) {
+//    mkdir("results");
+//}
 
 // get the selected IDs array
 $ids = array_map(fn($x) => $x['id'], $data);
@@ -34,9 +34,8 @@ exec("clustalo -i $prefix.fasta -o $aln_filename --force", $out1, $status1);
 
 
 // 3. run plotcon
-$png_filename = "$prefix.png";
 exec("plotcon -sequences $aln_filename -graph png -goutfile $prefix -winsize 4", $out2, $status2);
-
+$png_filename = "$prefix.1.png";
 
 // 4. update database
 $conservation_json = json_encode([
@@ -54,7 +53,7 @@ try {
     INSERT INTO results (search_id, conservation)
     VALUES (?, ?)
     ON DUPLICATE KEY UPDATE
-    conversation = VALUES(conversation)
+    conservation = VALUES(conservation)
     ");
     $stmt->execute([$search_id, $conservation_json]);
 

@@ -13,7 +13,7 @@ document.getElementById("btn_conservation").addEventListener("click", async () =
     });
 
     const result = await response.json();
-    console.log(result);
+    console.log(result.image);
 
     // show outputs
     document.getElementById("conservation_alignment").textContent = result.alignment;

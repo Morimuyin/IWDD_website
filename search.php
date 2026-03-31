@@ -50,7 +50,7 @@ _USER;
 <button id="btn_select">Get selected sequences:</button>
 
 <button id="btn_conservation">Run conservation analysis</button>
-<p id="conservation_alignment"></p>
+<pre id="conservation_alignment"></pre>
 <img id="conservation_image" />
 
 <!--JS for query-->
