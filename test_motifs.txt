@@ -1,0 +1,24 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Tue 31 Mar 2026 00:21:35
+# Commandline: patmatmotifs
+#    -sequence test_1p.fasta
+#    -outfile test_motifs.txt
+# Report_format: dbmotif
+# Report_file: test_motifs.txt
+########################################
+
+#=======================================
+#
+# Sequence: protein1     from: 1   to: 60
+# HitCount: 0
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+
+#---------------------------------------
+#---------------------------------------
