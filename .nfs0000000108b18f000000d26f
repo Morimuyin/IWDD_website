@@ -5,13 +5,10 @@
 // 3. display search result, and update database
 session_start();
 include 'redir_user.php';
-include 'menu.php';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style/basic.css">
-</head>
+<head></head>
 <body>
 
 <?php
@@ -56,12 +53,8 @@ _USER;
 <img id="conservation_image" />
 
 
-<button id="btn_motif">Run motif analysis on one selected sequence</button>
+<button id="btn_motif">Run motif analysis on selected sequence</button>
 <pre id="motif_result"></pre>
-
-<button id="btn_stats">Calculate statistics of selected sequences</button>
-<pre id="stats_result"></pre>
-
 
 <!--developing front-->
 <?php
@@ -270,13 +263,8 @@ function renderResults(data){
 
     //the other result
     if (data.result.other !== null){
-    const stats = JSON.parse(data.result.other);		
-    fetch(stats.stats_filename)
-    .then(res => res.text())
-    .then(text => {
-        document.getElementById("stats_result").textContent = text;
-    });
- 
+    const motif = JSON.parse(data.result.other);	
+    // waiting for development
     }
     }
 }
@@ -299,10 +287,6 @@ function renderResults(data){
 
 <!--JS for motif analysis-->
 <script src="motif.js"></script>
-
-<!--JS for protein statistics-->
-<script src="stats.js"></script>
-
 
 </body>
 </html>

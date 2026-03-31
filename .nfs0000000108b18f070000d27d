@@ -9,9 +9,6 @@ include 'menu.php';
 
 echo<<<_HEAD
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style/basic.css">
-</head>
 <body>
 _HEAD;
 

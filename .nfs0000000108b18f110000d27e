@@ -9,9 +9,7 @@ include 'menu.php';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="style/basic.css">
-</head>
+<head></head>
 <body>
 
 <?php

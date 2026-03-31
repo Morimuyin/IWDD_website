@@ -12,7 +12,6 @@ echo <<<_HEAD
 <html>
 <head>
 <title>index.php</title>
-<link rel="stylesheet" type="text/css" href="style/basic.css">
 </head>
 <body>
 _HEAD;
