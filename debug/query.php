@@ -8,6 +8,10 @@ $user_id = $_SESSION['user_id'];
 $family = $_POST['family'];
 $taxonomy = $_POST['taxonomy'];
 
+$_SESSION['search_id'] = 1;
+echo file_get_contents("example_dataset.json");
+
+/*
 $cmd = "./run_query.sh $family $taxonomy";
 $output = shell_exec($cmd);
 
@@ -38,6 +42,7 @@ try {
 } catch(PDOException $e) {
           echo "<b><font color=\"red\">Connection failed</font></b>:<br/>" . $e->getMessage();
 }
+ */
 
 /* fake data (replace later with shell_exec)
 $data = [
@@ -45,24 +50,24 @@ $data = [
         "id" => "XP_001",
         "name" => "glucose-6-phosphatase isoform 1",
         "length" => 357,
-        "sequence" => "MEEPQSDPSVEPPLSQETFSDLWKLLPEN..."
+        "sequence" => "MEEPQSDPSVEPPLSQETFSDLWKLLPEN"
     ],
     [
         "id" => "XP_002",
         "name" => "glucose-6-phosphatase isoform 2",
         "length" => 310,
-        "sequence" => "MSSGSSSSSSGSSGSGSAAAVVVVVVAAA..."
+        "sequence" => "MSSGSSSSSSGSSGSGSAAAVVVVVVAAA"
     ],
     [
         "id" => "XP_003",
         "name" => "glucose-6-phosphate translocase",
         "length" => 512,
-        "sequence" => "MKTVRQERLKSIVRILERSKEPVSGAQLAE..."
+        "sequence" => "MKTVRQERLKSIVRILERSKEPVSGAQLAE"
     ]
 ];
 
 echo json_encode($data);
-*/
+ */
 
 /*
 echo json_encode([
