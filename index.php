@@ -41,7 +41,8 @@ try {
 	// check password
 	if (($pw == $result['password'])) {
 	    // valid
-	    $_SESSION['user'] = $user;
+		$_SESSION['user'] = $user;
+		$_SESSION['user_id'] = $result['id'];
 	    echo "<p>Login successful</p>";
 	} else {
 	    // wrong password
@@ -56,7 +57,8 @@ try {
   		    } else {
        			 echo "<p>Error when creating user</p>";
      		    }
-                $_SESSION['user'] = $user;
+	    $_SESSION['user'] = $user;
+	    $_SESSION['user_id'] = $conn->lastInsertId();
               
             }  
 
