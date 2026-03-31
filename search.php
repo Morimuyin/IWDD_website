@@ -156,8 +156,38 @@ if (searchId !==null) {
 }
 function renderResults(data){
 	console.log(data);
-	// load sequences
-	// waiting for development...
+    // load sequences
+    if (data.search.sequences !== null){	
+
+	    document.getElementById("family").value = data.search.protein_family;
+	    document.getElementById("taxonomy").value = data.search.taxonomy;
+	    output = document.getElementById("results");
+	    output.innerHTML = "";
+    sequences = JSON.parse(data.search.sequences);
+
+    sequences.forEach(item => {
+        console.log("item:",item);
+	const row = document.createElement("tr");
+	row.innerHTML = `
+            <td>
+            <input type="checkbox"
+               class="row-select"
+               data-id="${item.id}"
+               data-name="${item.name}"
+               data-sequence="${item.sequence}">
+            </td>
+            <td>${item.id}</td>
+            <td>${item.name}</td>
+            <td>${item.length}</td>
+            <td style="max-width:500px; word-break:break-all;">
+                ${item.sequence}
+            </td>
+	`;
+	output.appendChild(row);
+    }) 
+    }
+
+
 
     // upload the results if exist
     if (data.result.motif !== null){
@@ -168,6 +198,23 @@ function renderResults(data){
         document.getElementById("motif_result").textContent = text;
     });
     }
+       
+    if (data.result.conservation !== null){
+    const conservation = JSON.parse(data.result.conservation);	
+    document.getElementById("conservation_image").src = conservation.png_filename;
+    fetch(conservation.aln_filename)
+    .then(res => res.text())
+    .then(text => {
+        document.getElementById("conservation_alignment").textContent = text;
+    });
+    }
+
+    //the other result
+    if (data.result.other !== null){
+    const motif = JSON.parse(data.result.other);	
+    // waiting for development
+    }
+ 
 }
 </script>
 
