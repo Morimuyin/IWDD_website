@@ -35,3 +35,6 @@ CREATE TABLE IF NOT EXISTS results (
         ON DELETE CASCADE
 );
 # delete if the search is deleted
+
+ALTER TABLE results
+ADD UNIQUE KEY (search_id);

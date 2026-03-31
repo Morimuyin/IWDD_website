@@ -46,7 +46,12 @@ _USER;
 </table>
 
 <p id="error_message"></p>
+
 <button id="btn_select">Get selected sequences:</button>
+
+<button id="btn_conservation">Run conservation analysis</button>
+<p id="conservation_alignment"></p>
+<img id="conservation_image" />
 
 <!--JS for query-->
 <script src="query.js"></script>
@@ -54,6 +59,8 @@ _USER;
 <!--JS for select sequences-->
 <script src="selection.js"></script>
 
+<!--JS for conservation analysis-->
+<script src="conservation.js"></script>
 
 </body>
 </html>
