@@ -8,7 +8,6 @@
 FAMILY=$1
 TAXONOMY=$2
 
-
 QUERY="$FAMILY AND $TAXONOMY"
 # echo $QUERY
 
@@ -35,7 +34,7 @@ BEGIN {
 
         count++
 
-        if (count >= 100) {
+        if (count >= 20) {
             print "\n]"
             done=1
             exit
@@ -59,7 +58,7 @@ BEGIN {
 
 END {
     if (!done) {
-        if (count < 100 && seq != "") {
+        if (count < 20 && seq != "") {
             if (!first) print ","
             printf "{\"id\":\"%s\",\"name\":\"%s\",\"sequence\":\"%s\",\"length\":%d}",
                 id, name, seq, length(seq)

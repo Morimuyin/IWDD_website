@@ -24,7 +24,7 @@ _USER;
 
 <!--search form-->
 <h1>Protein search:</h1>
-<p>maximun 20 results</p>
+<p>maximun 100 results</p>
 <form id="searchform">
     Protein family: <input type="text" id="family" value="glucose-6-phosphatase" required><br>
     Taxonomy group: <input type="text" id="taxonomy" value="Aves" required><br>
@@ -39,6 +39,7 @@ _USER;
 <table>
   <thead>
     <tr>
+      <th>Select</th>
       <th>ID</th>
       <th>Name</th>
       <th>Length</th>

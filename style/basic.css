@@ -23,6 +23,11 @@ button:hover {
     background-color: #555;
 }
 
+.tablecontainer {
+  max-height: 100px;   
+  overflow-y: auto;    
+}
+
 /* title */
 h1 {
     margin-top: 0;

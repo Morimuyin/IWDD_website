@@ -22,7 +22,7 @@ ChatGPT was used for:
 2. Debugging.
 3. Adjusting formatted code or cleaning repeated code, such as series of DOM objects, MySQL commands and PDO commands.
 4. Generating the FASTA parser script. 
-5. Helping the design of the sequence selection box.
+5. Helping the design of the sequence selection.
 6. Helping with adjustment of the CSS style sheet.
 </pre>
 
