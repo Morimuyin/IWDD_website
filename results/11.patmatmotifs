@@ -1,16 +1,16 @@
 ########################################
 # Program: patmatmotifs
-# Rundate: Wed  1 Apr 2026 13:41:35
+# Rundate: Wed  1 Apr 2026 13:49:23
 # Commandline: patmatmotifs
-#    -sequence results/10.fasta
-#    -outfile results/10.patmatmotifs
+#    -sequence results/11.fasta
+#    -outfile results/11.patmatmotifs
 # Report_format: dbmotif
-# Report_file: results/10.patmatmotifs
+# Report_file: results/11.patmatmotifs
 ########################################
 
 #=======================================
 #
-# Sequence: XP_005415892.1     from: 1   to: 299
+# Sequence: XP_002194882.1     from: 1   to: 355
 # HitCount: 0
 #
 # Full: No

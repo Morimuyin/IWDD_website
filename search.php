@@ -85,7 +85,8 @@ if ($mode == 'example'){
     	 $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
 	$stmt->execute(['example_G6P']);
 	$example_user = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
-
+	
+	// get example search
          $stmt = $conn->prepare("
    	 SELECT * FROM searches
 	    WHERE user_id = ?
@@ -95,6 +96,19 @@ if ($mode == 'example'){
 	$stmt->execute([$example_user]);
 	$search = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	if (!$search) {
+            throw new Exception("No example search found");
+	}
+
+	// get example sequences 
+	$stmt = $conn->prepare("
+            SELECT * FROM sequences
+            WHERE search_id = ?
+        ");
+        $stmt->execute([$search['id']]);
+        $sequences = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	// get example results
         $stmt = $conn->prepare("
 	    SELECT * FROM results
 	    WHERE search_id = ?
@@ -105,20 +119,36 @@ if ($mode == 'example'){
 	$result = $stmt->fetch(PDO::FETCH_ASSOC); 
 
 	 // insert the data into current user
-	
+	// new search
 	$stmt = $conn->prepare("
-   	 INSERT INTO searches (user_id, protein_family, taxonomy, sequences)
-  	  VALUES (?, ?, ?, ?)
+   	 INSERT INTO searches (user_id, protein_family, taxonomy)
+  	  VALUES (?, ?, ?)
 	");
 	$stmt->execute([
 	    $user_id,
 	    $search['protein_family'],
-	    $search['taxonomy'],
-	    $search['sequences']
+	    $search['taxonomy']
 	]);
 
 	$new_search_id = $conn->lastInsertId();
+	
+	//copy sequences
+	$stmt = $conn->prepare("
+            INSERT INTO sequences (search_id, sequence_id, name, sequence, length)
+            VALUES (?, ?, ?, ?, ?)
+        ");
 
+        foreach ($sequences as $seq) {
+            $stmt->execute([
+                $new_search_id,
+                $seq['sequence_id'],
+                $seq['name'],
+                $seq['sequence'],
+                $seq['length']
+            ]);
+        }
+
+	//copy result
 	$stmt = $conn->prepare("
 	    INSERT INTO results (search_id, motif, conservation, other)
 	    VALUES (?, ?, ?, ?)
@@ -165,8 +195,16 @@ if ($mode == 'example'){
         $search->execute([$user_id]);
         $search = $search->fetch(PDO::FETCH_ASSOC);
     }
-	// get result
+	// get result if search exist
     if ($search) {
+	// get sequences	
+        $sequences = $conn->prepare("
+            SELECT * FROM sequences
+            WHERE search_id = ?
+        ");
+        $sequences->execute([$search['id']]);
+        $sequences = $sequences->fetchAll(PDO::FETCH_ASSOC);
+
 
         $result = $conn->prepare("
             SELECT * FROM results 
@@ -177,17 +215,13 @@ if ($mode == 'example'){
         $result->execute([$search['id']]);
         $result = $result->fetch(PDO::FETCH_ASSOC);
 
-        // prepare intial data
-        $data = [
-            "search" => $search,
-            "result" => $result
-        ];
 	
 	//set session search_id
 	$_SESSION['search_id'] = $search['id'];
     } else{
    	$_SESSION['search_id'] = null;
 	$search = null;
+	$sequences = null;
 	$result = null;
     }
 	} catch(PDOException $e) {
@@ -197,11 +231,13 @@ if ($mode == 'example'){
 // if start from new search
 	$_SESSION['search_id'] = null;
 	$search = null;
+	$sequences = null;
 	$result = null;
 }
 $data = [
         "search" => $search,
-        "result" => $result
+	"sequences" => json_encode($sequences),
+	"result" => $result
     ];
 ?>
 
@@ -216,13 +252,13 @@ if (searchId !==null) {
 function renderResults(data){
 	console.log(data);
     // load sequences
-    if (data.search.sequences !== null){	
+    if (data.sequences !== null){	
 
 	    document.getElementById("family").value = data.search.protein_family;
 	    document.getElementById("taxonomy").value = data.search.taxonomy;
 	    output = document.getElementById("results");
 	    output.innerHTML = "";
-    sequences = JSON.parse(data.search.sequences);
+    sequences = JSON.parse(data.sequences);
 
     sequences.forEach(item => {
     //    console.log("item:",item);

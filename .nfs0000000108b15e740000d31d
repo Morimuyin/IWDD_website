@@ -17,7 +17,6 @@ $output = shell_exec($cmd);
 //file_put_contents("debug_out.txt", $output);
 
 echo $output;
-$data = json_decode($output, true);
 
 // update database
 try {
@@ -27,30 +26,14 @@ try {
  
      // insert search entry
     $stmt = $conn->prepare("
-    INSERT INTO searches (user_id, protein_family, taxonomy)
-    VALUES (?, ?, ?)
+    INSERT INTO searches (user_id, protein_family, taxonomy, sequences)
+    VALUES (?, ?, ?, ?)
     ");
-    $stmt->execute([$user_id, $family, $taxonomy]);
+    $stmt->execute([$user_id, $family, $taxonomy, $output]);
 
     // session: search_id
-    $search_id = $conn->lastInsertId();
-    $_SESSION['search_id'] = $search_id;
-	
-    // insert sequences
-    $stmt = $conn->prepare("
-    INSERT INTO sequences (search_id, sequence_id, name, sequence, length)
-    VALUES (?, ?, ?, ?, ?)
-    ");
+    $_SESSION['search_id'] = $conn->lastInsertId();
 
-    foreach ($data as $seq) {
-    $stmt->execute([
-        $search_id,
-        $seq['id'],
-        $seq['name'],
-        $seq['sequence'],
-        $seq['length']
-    ]);
-    }  
     $stmt = null;
 } catch(PDOException $e) {
           echo "<b><font color=\"red\">Connection failed</font></b>:<br/>" . $e->getMessage();
