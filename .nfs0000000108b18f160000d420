@@ -17,7 +17,7 @@ _HEAD;
 
 $user = $_SESSION['user'];
 echo <<<_WELCOME
-<p>User: {$user}</p>
+<p>Welcome {$user}</p>
 _WELCOME;
 
 echo <<<_BODY

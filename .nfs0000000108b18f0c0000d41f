@@ -17,8 +17,8 @@ include 'menu.php';
 <?php
 $user = $_SESSION['user'];
 echo <<<_USER
-<p>User: {$user} <a href="logout.php">Logout</a></p>
-<hr>
+<p>User: {$user}</p>
+<a href="logout.php">Logout</a>
 _USER;
 ?>
 
@@ -267,11 +267,11 @@ function renderResults(data){
             <td>
             <input type="checkbox"
                class="row-select"
-               data-id="${item.sequence_id}"
+               data-id="${item.id}"
                data-name="${item.name}"
                data-sequence="${item.sequence}">
             </td>
-            <td>${item.sequence_id}</td>
+            <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.length}</td>
             <td style="max-width:500px; word-break:break-all;">

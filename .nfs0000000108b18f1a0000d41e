@@ -24,8 +24,6 @@ echo <<<_INFO
 <ol> 
 <li>Query the NCBI database for sequences from a protein family and a taxonomy group.</li>
 <li>Perform the following analyses: conversation, motif, and other sequence-based analysis</li>
-<br>
-<br>
 _INFO;
 
 // if user and password set by POST, check and set session
