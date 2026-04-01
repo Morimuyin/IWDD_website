@@ -1,3 +1,50 @@
+/* body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+/* input */
+input, select, button {
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+button {
+    background-color: #3a3a3a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* title */
+h1 {
+    margin-top: 0;
+}
+
+/* text output */
+pre {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    padding: 10px;
+    overflow-x: auto;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* image */
+img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
 /* Navbar table */
 .navbar {
     background-color: #3a3a3a;

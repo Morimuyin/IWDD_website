@@ -34,7 +34,7 @@ _USER;
 <div id="loading" style="display:none;">
     Loading results...
 </div>
-<hr>
+
 <!--result table-->
 <table>
   <thead>
@@ -47,19 +47,18 @@ _USER;
   </thead>
   <tbody id="results"></tbody>
 </table>
-<hr>
+
 <p id="error_message"></p>
 
-<hr>
+
 <button id="btn_conservation">Run conservation analysis on selected sequences</button>
 <pre id="conservation_alignment"></pre>
 <img id="conservation_image" />
 
-<hr>
+
 <button id="btn_motif">Run motif analysis on one selected sequence</button>
 <pre id="motif_result"></pre>
 
-<hr>
 <button id="btn_stats">Calculate statistics of selected sequences</button>
 <pre id="stats_result"></pre>
 
