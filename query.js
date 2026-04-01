@@ -19,13 +19,13 @@ async function getquery(event){
             const response = await fetch("query.php",{
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/x-www-form-urlencoded"
             },
             body: `family=${family}&taxonomy=${taxonomy}`
             });
 
 	    // check result
-	    //const text = await response.text();
+	   // const text = await response.text();
 	   //console.log("respone text:", text); 
     // display the results in the table
     const data = await response.json();

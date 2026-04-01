@@ -1,0 +1,24 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Wed  1 Apr 2026 16:00:54
+# Commandline: patmatmotifs
+#    -sequence results/26.fasta
+#    -outfile results/26.patmatmotifs
+# Report_format: dbmotif
+# Report_file: results/26.patmatmotifs
+########################################
+
+#=======================================
+#
+# Sequence: CAD25456.1     from: 1   to: 267
+# HitCount: 0
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+
+#---------------------------------------
+#---------------------------------------

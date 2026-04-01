@@ -11,7 +11,6 @@ include 'menu.php';
 
 <h1>Help</h1>
 <br>
-<hr>
 
 <h2>Login</h2>
 <pre>
