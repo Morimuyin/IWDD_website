@@ -12,71 +12,78 @@ include 'menu.php';
 <h1>About</h1>
 <br>
 <img src="structure.png" alt="Structure of the website and database" width="600" style="display:block;margin:auto">
-<p style="text-align:center;"> Struture of the website and database</p>
+<p style="text-align:center;"> Structure of the website and database</p>
 <pre>
 ================================================================================
-Database:
+MySQL Database:
 ================================================================================
-4 tables
-users: Storing user information.
-searches: Storing search record.
-sequences: Storing sequences from searches.
-results: Storing protein analysis results(filenames).
+The database consists of 4 tables:
+users: Stores user account information.
+searches: Stores search records.
+sequences: Stores protein sequences retrieved from searches.
+results: Stores protein analysis results(e.g., filenames).
 
-Foreign keys used are shown as arrows.
-Some results not suitable for storing in the database are stored in results/.
+Foreign keys relationships are illustrated by arrows in the diagram.
+Some results not suitable for storage in the database are instead saved in the "results/" directory.
 
 ================================================================================
 Website: 
 ================================================================================
 1. Home - index.php
-	Provide basic information about this website.
-	Login.
+	Provides basic information about the website and user login.
 
 2. Start - start.php
-	Three choices are provided:
-		New search
-		Example
-		History
+	Provides three options:
+		- New Search
+		- Example
+		- History
 
 3. Analysis - search.php
-	Protein sequences query: form + result table
+	Protein sequences query: 
+		- Input form and result table
 	Analysis:
-		Conservation(fasta -> aln -> png)
-		Motif(fasta -> patmatmotifs)
-		Protein statistics(fasta -> pepstats)
+		- Conservation(FASTA → alignment → plot)
+		- Motif Analysis(FASTA → patmatmotifs)
+		- Protein statistics(fasta → pepstats)
 
 4. Help
-Provide introduction to usage of the page and external links about the results.
+	Provides guidance on how to use the website and include external links explaining the analysis results.
 
 5. About
-Provide information about the design of the website and the database.
+	Describes the design and structure of the website and the database.
 	
 6. Credit
-Statement of credits.
+	Statement of credits.
 
 7. GitHub
+	Link to the project repository.
 
-Other files are used to support these pages:
-	providing basic functionalities
-	query and analysis
-	managing data in MySQL database and results/
+Supporting files:
+Additional files support the main pages by:
+	- providing basic functionalities
+	- handling sequence queries and analyses
+	- managing data in the MySQL database and the "results/" directory
 	
 ================================================================================
 Details:
 ================================================================================
-Example and history functionality is realized by POST and initialization:
-	1. example
-	load predefined demo data (user: example_G6P)
-	Database: copy the data for the current user
-	Session: update session search_id
-	html: display the data
+The "Example" and "History" functionalities are implemented using POST requests and session initialization.
 
-	2. history
-	Show all the last search and corresponding results of current user
-	html: display if exist
-	Session: update session search_id if exist
-The query and analysis are on the same page, which is realized using AJAX.
+1. Example
+	- loads predefined demo data (user: example_G6P)
+	- Database: copies the demo data to the current user
+	- Session: updates the session search_id
+	- HTML: displays the data
+
+2. History
+	- Displays the most recent search and corresponding results for the current user
+	- HTML: displays the data if available
+	- Session: updates session search_id if data exists
+
+The query and analysis functionalities are implemented on the same page using AJAX.
+
+This website uses essential cookies to manage user sessions and maintain login functionality. No tracking or third-party analytics cookies are used.
+</pre>
 </pre>
 
 </body>

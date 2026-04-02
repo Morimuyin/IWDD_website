@@ -19,11 +19,11 @@ _HEAD;
 
 // provide basic info with a list
 echo <<<_INFO
-<h1>About this website:</h1>
-<p>This is a website for the IWDD ICA. The website provides the following functionalities:</p>
+<h1>My Little Protein Lab</h1>
+<p>This website was developed for the IWDD ICA. It provides the following functionalities:</p>
 <ol> 
-<li>Query the NCBI database for sequences from a protein family and a taxonomy group.</li>
-<li>Perform the following analyses: conversation, motif, and other sequence-based analysis</li>
+<li>Query the NCBI database for sequences from a specified protein family and taxonomy group.</li>
+<li>Perform sequence-based analyses, including conservation, motif identification, and other related analysis</li>
 <br>
 <br>
 _INFO;
