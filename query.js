@@ -25,11 +25,11 @@ async function getquery(event){
             });
 
 	    // check result
-	   // const text = await response.text();
-	   //console.log("respone text:", text); 
+	  // const text = await response.text();
+	  // console.log("respone text:", text); 
     // display the results in the table
     const data = await response.json();
-
+    //console.log("response", data);
 
 /* test using example_dataset.json
     const response = await fetch("example_dataset.json");

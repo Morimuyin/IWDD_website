@@ -30,7 +30,9 @@ _USER;
     Taxonomy group: <input type="text" id="taxonomy" value="Aves" required><br>
     <button type="submit" id="searchbtn">Search</button>
 </form>
-
+<div class="status-message">
+  If no results are displayed, or an error occurred, please check your input or try again later.
+</div>
 <div id="loading" style="display:none;">
     Loading results...
 </div>
