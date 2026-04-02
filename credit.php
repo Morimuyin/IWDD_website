@@ -22,10 +22,11 @@ GenAI Usage:
 ChatGPT was used in the following ways: 
 1. Discussing and evaluating the validity of certain design ideas.
 2. Assisting with debugging.
-3. Refining and formatting code, such as series of DOM objects, MySQL commands and PDO commands.
+3. Refining and formatting code, including DOM manipulation, MySQL queries, and PDO statements.
 4. Assisting in the development of the FASTA parser script. 
 5. Providing suggestions for the sequence selection design.
 6. Assisting with adjustment to the CSS stylesheet.
+7. Improving the clarity of writing.
 </pre>
 
 </body>
