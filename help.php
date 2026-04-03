@@ -37,7 +37,7 @@ If the connection is unstable, retrying the query is recommened.
 Protein conservation:
 Text reports and plots are generated from selected multiple sequences. 
 Results are obtained using EMBOSS plotcon, with sequence alignment performed by Clustal Omega.
-<a href=“https://emboss.sourceforge.net/apps/release/6.6/emboss/apps/plotcon.html”>About protein conservation plot</a>
+<a href="https://emboss.sourceforge.net/apps/release/6.6/emboss/apps/plotcon.html">About protein conservation plot</a>
 
 Motif Analysis:
 Text reports are generated from the selected sequence. 

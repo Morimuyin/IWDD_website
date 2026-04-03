@@ -1,0 +1,144 @@
+PEPSTATS of KFQ35973.1 from 1 to 147
+
+Molecular weight = 16333.88  		Residues = 147   
+Average Residue Weight  = 111.115 	Charge   = 3.5   
+Isoelectric Point = 8.0208
+A280 Molar Extinction Coefficients  = 17420 (reduced)   17670 (cystine bridges)
+A280 Extinction Coefficients 1mg/ml = 1.066 (reduced)   1.082 (cystine bridges)
+Improbability of expression in inclusion bodies = 0.876
+
+Residue		Number		Mole%		DayhoffStat
+A = Ala		11		7.483  		0.870  	
+B = Asx		0		0.000  		0.000  	
+C = Cys		5		3.401  		1.173  	
+D = Asp		5		3.401  		0.618  	
+E = Glu		5		3.401  		0.567  	
+F = Phe		9		6.122  		1.701  	
+G = Gly		11		7.483  		0.891  	
+H = His		3		2.041  		1.020  	
+I = Ile		19		12.925 		2.872  	
+J = ---		0		0.000  		0.000  	
+K = Lys		5		3.401  		0.515  	
+L = Leu		13		8.844  		1.195  	
+M = Met		1		0.680  		0.400  	
+N = Asn		9		6.122  		1.424  	
+O = ---		0		0.000  		0.000  	
+P = Pro		6		4.082  		0.785  	
+Q = Gln		4		2.721  		0.698  	
+R = Arg		7		4.762  		0.972  	
+S = Ser		13		8.844  		1.263  	
+T = Thr		6		4.082  		0.669  	
+U = ---		0		0.000  		0.000  	
+V = Val		6		4.082  		0.618  	
+W = Trp		1		0.680  		0.523  	
+X = Xaa		0		0.000  		0.000  	
+Y = Tyr		8		5.442  		1.601  	
+Z = Glx		0		0.000  		0.000  	
+
+Property	Residues		Number		Mole%
+Tiny		(A+C+G+S+T)		46		31.293
+Small		(A+B+C+D+G+N+P+S+T+V)	72		48.980
+Aliphatic	(A+I+L+V)		49		33.333
+Aromatic	(F+H+W+Y)		21		14.286
+Non-polar	(A+C+F+G+I+L+M+P+V+W+Y)	90		61.224
+Polar		(D+E+H+K+N+Q+R+S+T+Z)	57		38.776
+Charged		(B+D+E+H+K+R+Z)		25		17.007
+Basic		(H+K+R)			15		10.204
+Acidic		(B+D+E+Z)		10		 6.803
+
+PEPSTATS of KFQ38853.1 from 1 to 352
+
+Molecular weight = 40082.98  		Residues = 352   
+Average Residue Weight  = 113.872 	Charge   = 14.0  
+Isoelectric Point = 8.7150
+A280 Molar Extinction Coefficients  = 100380 (reduced)   100880 (cystine bridges)
+A280 Extinction Coefficients 1mg/ml = 2.504 (reduced)   2.517 (cystine bridges)
+Improbability of expression in inclusion bodies = 0.707
+
+Residue		Number		Mole%		DayhoffStat
+A = Ala		32		9.091  		1.057  	
+B = Asx		0		0.000  		0.000  	
+C = Cys		9		2.557  		0.882  	
+D = Asp		10		2.841  		0.517  	
+E = Glu		8		2.273  		0.379  	
+F = Phe		28		7.955  		2.210  	
+G = Gly		24		6.818  		0.812  	
+H = His		14		3.977  		1.989  	
+I = Ile		17		4.830  		1.073  	
+J = ---		0		0.000  		0.000  	
+K = Lys		9		2.557  		0.387  	
+L = Leu		47		13.352 		1.804  	
+M = Met		8		2.273  		1.337  	
+N = Asn		6		1.705  		0.396  	
+O = ---		0		0.000  		0.000  	
+P = Pro		15		4.261  		0.819  	
+Q = Gln		18		5.114  		1.311  	
+R = Arg		16		4.545  		0.928  	
+S = Ser		21		5.966  		0.852  	
+T = Thr		17		4.830  		0.792  	
+U = ---		0		0.000  		0.000  	
+V = Val		26		7.386  		1.119  	
+W = Trp		15		4.261  		3.278  	
+X = Xaa		0		0.000  		0.000  	
+Y = Tyr		12		3.409  		1.003  	
+Z = Glx		0		0.000  		0.000  	
+
+Property	Residues		Number		Mole%
+Tiny		(A+C+G+S+T)		103		29.261
+Small		(A+B+C+D+G+N+P+S+T+V)	160		45.455
+Aliphatic	(A+I+L+V)		122		34.659
+Aromatic	(F+H+W+Y)		69		19.602
+Non-polar	(A+C+F+G+I+L+M+P+V+W+Y)	233		66.193
+Polar		(D+E+H+K+N+Q+R+S+T+Z)	119		33.807
+Charged		(B+D+E+H+K+R+Z)		57		16.193
+Basic		(H+K+R)			39		11.080
+Acidic		(B+D+E+Z)		18		 5.114
+
+PEPSTATS of KFQ40128.1 from 1 to 173
+
+Molecular weight = 19520.68  		Residues = 173   
+Average Residue Weight  = 112.836 	Charge   = 4.0   
+Isoelectric Point = 7.8360
+A280 Molar Extinction Coefficients  = 16390 (reduced)   16890 (cystine bridges)
+A280 Extinction Coefficients 1mg/ml = 0.840 (reduced)   0.865 (cystine bridges)
+Improbability of expression in inclusion bodies = 0.721
+
+Residue		Number		Mole%		DayhoffStat
+A = Ala		11		6.358  		0.739  	
+B = Asx		0		0.000  		0.000  	
+C = Cys		8		4.624  		1.595  	
+D = Asp		7		4.046  		0.736  	
+E = Glu		6		3.468  		0.578  	
+F = Phe		13		7.514  		2.087  	
+G = Gly		10		5.780  		0.688  	
+H = His		4		2.312  		1.156  	
+I = Ile		17		9.827  		2.184  	
+J = ---		0		0.000  		0.000  	
+K = Lys		8		4.624  		0.701  	
+L = Leu		17		9.827  		1.328  	
+M = Met		2		1.156  		0.680  	
+N = Asn		5		2.890  		0.672  	
+O = ---		0		0.000  		0.000  	
+P = Pro		6		3.468  		0.667  	
+Q = Gln		7		4.046  		1.037  	
+R = Arg		7		4.046  		0.826  	
+S = Ser		15		8.671  		1.239  	
+T = Thr		10		5.780  		0.948  	
+U = ---		0		0.000  		0.000  	
+V = Val		9		5.202  		0.788  	
+W = Trp		0		0.000  		0.000  	
+X = Xaa		0		0.000  		0.000  	
+Y = Tyr		11		6.358  		1.870  	
+Z = Glx		0		0.000  		0.000  	
+
+Property	Residues		Number		Mole%
+Tiny		(A+C+G+S+T)		54		31.214
+Small		(A+B+C+D+G+N+P+S+T+V)	81		46.821
+Aliphatic	(A+I+L+V)		54		31.214
+Aromatic	(F+H+W+Y)		28		16.185
+Non-polar	(A+C+F+G+I+L+M+P+V+W+Y)	104		60.116
+Polar		(D+E+H+K+N+Q+R+S+T+Z)	69		39.884
+Charged		(B+D+E+H+K+R+Z)		32		18.497
+Basic		(H+K+R)			19		10.983
+Acidic		(B+D+E+Z)		13		 7.514
+
