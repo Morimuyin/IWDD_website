@@ -1,0 +1,24 @@
+########################################
+# Program: patmatmotifs
+# Rundate: Thu  2 Apr 2026 19:52:47
+# Commandline: patmatmotifs
+#    -sequence results/60.fasta
+#    -outfile results/60.patmatmotifs
+# Report_format: dbmotif
+# Report_file: results/60.patmatmotifs
+########################################
+
+#=======================================
+#
+# Sequence: KAN4028370.1     from: 1   to: 259
+# HitCount: 0
+#
+# Full: No
+# Prune: Yes
+# Data_file: /usr/share/EMBOSS/data/PROSITE/prosite.lines
+#
+#=======================================
+
+
+#---------------------------------------
+#---------------------------------------
